@@ -4,15 +4,42 @@
 <head>
 <meta charset="UTF-8">
 <style>
-
-
-
+div{
+border: solid 1px;
+display: inline-block;
+width: 6%;
+height: 30px;
+}
 </style>
 </head>
 <body>
+<p>
+<button>START</button>
+</p>
+<script>
+var btn = document.querySelector("button");
+var a=[];
+var i=0;
+var n=[];
+for(i=0;i<384;i++){
+	n[i]=i;
+	a[i]=document.createElement('div');
+	document.body.appendChild(a[i]);
+	a[i].addEventListener('click', function(e){
+	e.target.style.backgroundColor="green";
+	});}
+btn.onclick=function(){
+
+}
 
 
 
 
+
+
+
+
+
+</script>
 </body>
 </html>
