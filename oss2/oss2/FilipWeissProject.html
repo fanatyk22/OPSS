@@ -1,45 +1,110 @@
-<!DOCTYPE html>
-<html>
+<html lang="pl">
 
 <head>
-<meta charset="UTF-8">
-<style>
-div{
-border: solid 1px;
-display: inline-block;
-width: 6%;
-height: 30px;
-}
-</style>
+    <meta charset="utf-8">
+    <title>Projekt</title>
+   
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<p>
-<button>START</button>
-</p>
-<script>
-var btn = document.querySelector("button");
-var a=[];
-var i=0;
-var n=[];
-for(i=0;i<384;i++){
-	n[i]=i;
-	a[i]=document.createElement('div');
-	document.body.appendChild(a[i]);
-	a[i].addEventListener('click', function(e){
-	e.target.style.backgroundColor="green";
-	});}
-btn.onclick=function(){
+    
+    <section class="topbar">
+        <section class="configurations">
+            <section class="first-row">
+                <ul class="game-controls">
+                    <li>
+                        <button class="step back">
+                            Poprzedni
+                        </button>
+                    </li>
+                    <li>
+                        <button class="step next">
+                            Nastepny
+                        </button>
+                    </li>
+                    <li>
+                        <button class="play">
+                            Start
+                        </button>
+                        <button class="pause">
+                            Pauza
+                        </button>
+                    </li>
+                    <li>
+                        <button class="rewind">
+                            Odswiez
+                        </button>
+                    </li>
+                    <li>
+                        <label>
+                            KROKI:
+                        </label>
+                        <input type="textarea" class="generationDisplay" disabled="true" value="1" />
+                    </li>
+                    <li>
+                        <label>
+                            Predkosc:
+                        </label>
+                        <input type="textarea" class="speedDisplay" disabled="true" />
+                        <input type="number" class="speedControl" name="speed" min="1" max="100" value="50"/> 
+                    </li>
+                    <li>
+                        <button class="clear">
+                            Czysc
+                        </button>
+                    </li>
+                </ul>
+            </section>
+            <section class="second-row">
+                <ul class="board-size">
+                    <li class="width">
+                        <label>
+                            Szerokosc
+                        </label>
+                        <input name="width" type="number" min="5" class="widthControl" value="84"/>
+                    </li>
+                    <li class="height">
+                        <label>
+                            Wysokosc
+                        </label>
+                        <input name="height" type="number" min="5" class="heightControl" value="33"/>
+                    </li>
+                </ul>
+                <button class="autoFit">
+                     Dopasuj
+                </button>
+                <ul class="styling">
+                    <li class="cellSize">
+                        <label>
+                            Rozmiar
+                        </label>
+                        <input name="cellSize" type="number" min="5" max="20" class="cellSizeControl" value="15" />
+                    </li>
+                </ul>
+                <ul class="rulesControl">
+                    <li>
+                        <input type="radio" name="game-rules" class="game-rules" value="fixed" checked>
+                        <label>
+                            Plaszczyzna
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="game-rules" class="game-rules" value="wrapped">
+                        <label>
+                            Torus
+                        </label>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </section>
+    <section class="gameArea">
+        <table class="gameGrid">
 
-}
-
-
-
-
-
-
-
-
-
-</script>
+            <script type="text/javascript" src="java.js"></script>
+        </table>
+    </section>
 </body>
+
 </html>
